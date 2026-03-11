@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexusCart | Smart E-Commerce</title>
+    <meta name="description" content="An intelligent e-commerce platform powered by Market Basket Analysis.">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./index.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <i class="ri-shopping-bag-3-fill nav-logo-icon"></i>
+            NexusCart
+        </div>
+        <div class="nav-links">
+            <a href="#" id="storefront-toggle">Storefront</a>
+            <a href="#" id="admin-toggle" class="active">Admin Dashboard</a>
+        </div>
+        <div class="nav-actions">
+            <div class="cart-icon" id="cart-btn">
+                <i class="ri-shopping-cart-2-line"></i>
+                <span class="cart-count">0</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Storefront View -->
+    <main id="storefront-view" class="view">
+        <!-- AI Homepage Ranking Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Smart Recommendations For You</h1>
+                <p>Based on our real-time ML engine analyzing thousands of transactions, here are the top picks curated
+                    just for your session.</p>
+            </div>
+        </section>
+
+        <!-- Dynamic Product Grid -->
+        <section class="container">
+            <div class="section-header">
+                <h2>Trending Now</h2>
+                <span class="tag"><i class="ri-bar-chart-2-line"></i> Live Ranked</span>
+            </div>
+            <div class="product-grid" id="homepage-products">
+                <!-- Products injected by JS -->
+            </div>
+        </section>
+
+        <!-- Promo Section (System Generated) -->
+        <section class="promo-section container" id="promo-banner">
+            <!-- Promo injected by JS -->
+        </section>
+    </main>
+
+    <!-- Admin Dashboard View -->
+    <main id="admin-view" class="view active">
+        <section class="container">
+            <div class="admin-header">
+                <h2>MBA Engine Control Center</h2>
+                <div class="learning-status">
+                    <div class="status-indicator live"></div>
+                    <span>System Status: Learning (Iteration <span id="iteration-counter">3</span>)</span>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <!-- Metrics Card -->
+                <div class="dash-card" style="grid-column: 1 / -1; max-width: 800px; margin: 0 auto; width: 100%;">
+                    <h3 style="text-align: center;">Engine Diagnostics</h3>
+                    <div class="metric-row">
+                        <span>Min Support</span>
+                        <strong>0.02 (Auto-tuned)</strong>
+                    </div>
+                    <div class="metric-row">
+                        <span>Min Confidence</span>
+                        <strong>0.45 (Stable)</strong>
+                    </div>
+                    <div class="metric-row">
+                        <span>Algorithm</span>
+                        <strong>FP-Growth (Dense Basket Optimized)</strong>
+                    </div>
+                    <div class="metric-row">
+                        <span>Datasets Processed</span>
+                        <strong>Dataset A & Dataset B (Synthetics)</strong>
+                    </div>
+                    <button class="btn btn-primary mt-3" id="trigger-update-btn">
+                        <i class="ri-refresh-line"></i> Simulate Data Ingestion (Iterate)
+                    </button>
+                </div>
+
+                <!-- Top Rules Card -->
+                <div class="dash-card full-width">
+                    <h3>Top Association Rules (Live Evaluation)</h3>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Antecedent (If buy)</th>
+                                    <th>Consequent (Then buy)</th>
+                                    <th>Support</th>
+                                    <th>Confidence</th>
+                                    <th>Lift</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="rules-table-body">
+                                <!-- Rules injected by JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-btn" id="close-cart"><i class="ri-close-line"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Items injected by JS -->
+            <div class="empty-cart-msg">Your cart is empty.</div>
+        </div>
+
+        <!-- Cross-sell / Frequently Bought Together -->
+        <div class="cart-recommendations" id="cart-recommendations" style="display: none;">
+            <h4><i class="ri-sparkling-fill"></i> Frequently Bought Together</h4>
+            <div class="recommendation-list" id="recommendation-list">
+                <!-- Recommendations injected by JS -->
+            </div>
+        </div>
+
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <strong id="cart-total-price">$0.00</strong>
+            </div>
+            <button class="btn btn-primary checkout-btn" disabled>Proceed to Checkout</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
