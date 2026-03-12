@@ -137,6 +137,17 @@ function renderDiagnostics() {
     document.getElementById("stat-basket").textContent      = d.stats.avg_basket_size;
     document.getElementById("stat-itemsets").textContent    = d.stats.frequent_itemsets;
     document.getElementById("stat-rules").textContent       = d.stats.rules_count;
+
+    // Patterns Found = frequent itemsets + association rules
+    const totalPatterns = (d.stats.frequent_itemsets || 0) + (d.stats.rules_count || 0);
+    document.getElementById("stat-patterns").textContent    = totalPatterns;
+
+    // Estimated Revenue = transactions × avg basket size × avg product price
+    const products = currentProducts();
+    const prices   = Object.values(products).map(p => p.price).filter(Boolean);
+    const avgPrice = prices.length ? prices.reduce((a, b) => a + b, 0) / prices.length : 0;
+    const revenue  = d.stats.total_transactions * d.stats.avg_basket_size * avgPrice;
+    document.getElementById("stat-revenue").textContent     = "$" + Math.round(revenue).toLocaleString();
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -849,23 +860,36 @@ function showUploadStatus(type, msg) {
     el.innerHTML = `<div class="upload-status-msg"><i class="${icon}"></i> ${msg}</div>`;
 }
 
-// ── Wire up upload zone ──
+// ── Wire up upload zone (multi-file support) ──
 function setupUploadZone() {
     const zone  = document.getElementById("upload-zone");
     const input = document.getElementById("csv-file-input");
 
-    function handleFile(file) {
-        if (!file || !file.name.endsWith(".csv")) {
-            showUploadStatus("error", "Please upload a .csv file.");
+    function handleFiles(files) {
+        const csvFiles = Array.from(files).filter(f => f.name.endsWith(".csv"));
+        if (!csvFiles.length) {
+            showUploadStatus("error", "Please upload at least one .csv file.");
             return;
         }
-        showUploadStatus("processing", `Reading ${file.name}...`);
-        const reader = new FileReader();
-        reader.onload = e => {
-            const transactions = parseCSV(e.target.result);
-            renderUploadResults(transactions, file.name);
-        };
-        reader.readAsText(file);
+        const label = csvFiles.length === 1
+            ? csvFiles[0].name
+            : `${csvFiles.length} files (${csvFiles.map(f => f.name).join(", ")})`;
+        showUploadStatus("processing", `Reading ${label}...`);
+
+        // Read all files, then merge transactions
+        let done = 0;
+        const allTransactions = [];
+        csvFiles.forEach(file => {
+            const reader = new FileReader();
+            reader.onload = e => {
+                allTransactions.push(...parseCSV(e.target.result));
+                done++;
+                if (done === csvFiles.length) {
+                    renderUploadResults(allTransactions, label);
+                }
+            };
+            reader.readAsText(file);
+        });
     }
 
     zone.addEventListener("dragover", e => { e.preventDefault(); zone.classList.add("zone-hover"); });
@@ -873,9 +897,9 @@ function setupUploadZone() {
     zone.addEventListener("drop", e => {
         e.preventDefault();
         zone.classList.remove("zone-hover");
-        handleFile(e.dataTransfer.files[0]);
+        handleFiles(e.dataTransfer.files);
     });
-    input.addEventListener("change", e => handleFile(e.target.files[0]));
+    input.addEventListener("change", e => handleFiles(e.target.files));
 }
 
 // ─────────────────────────────────────────────────────────────────────────────

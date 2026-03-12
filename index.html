@@ -103,6 +103,58 @@
             </div>
         </div>
 
+        <!-- CSV Upload / Live Ingestion — TOP -->
+        <div class="dash-card" style="margin-bottom:1.5rem;">
+            <div class="card-title"><i class="ri-upload-cloud-2-line"></i> Live Data Ingestion — Upload Custom CSV</div>
+            <div class="upload-zone" id="upload-zone">
+                <i class="ri-file-text-line upload-icon"></i>
+                <div class="upload-text">
+                    <strong>Drop transaction CSV(s) here</strong> or
+                    <label class="upload-label" for="csv-file-input">browse files</label>
+                    <input type="file" id="csv-file-input" accept=".csv" multiple style="display:none;">
+                </div>
+                <div class="upload-hint text-muted small">
+                    Format: <code>transaction_id,items</code> where items are <code>|</code>-separated product IDs<br>
+                    Multiple files supported — all will be merged and analysed together.<br>
+                    Or use any CSV where each row has space/comma-separated item names — the engine adapts.
+                </div>
+            </div>
+            <div id="upload-status" style="display:none;"></div>
+            <div id="upload-results" style="display:none;">
+                <div class="upload-result-header">
+                    <span class="chip chip-green"><i class="ri-check-line"></i> Analysis Complete</span>
+                    <span id="upload-file-name" class="text-muted small"></span>
+                </div>
+                <div class="dash-row" style="margin-top:1rem;">
+                    <div class="dash-card" style="margin-bottom:0;">
+                        <div class="card-title"><i class="ri-database-2-line"></i> Ingested Stats</div>
+                        <div id="upload-stats-block"></div>
+                    </div>
+                    <div class="dash-card" style="margin-bottom:0;">
+                        <div class="card-title"><i class="ri-settings-4-line"></i> Auto-Tuned Config</div>
+                        <div id="upload-config-block"></div>
+                    </div>
+                </div>
+                <div class="dash-card" style="margin-top:1rem;margin-bottom:0;">
+                    <div class="card-title"><i class="ri-table-2"></i> Mined Association Rules</div>
+                    <div class="table-wrapper">
+                        <table class="data-table">
+                            <thead><tr>
+                                <th>Antecedent</th><th>Consequent</th>
+                                <th>Support</th><th>Confidence</th>
+                                <th>Lift</th><th>Leverage</th><th>Conviction</th>
+                            </tr></thead>
+                            <tbody id="upload-rules-tbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="dash-card" style="margin-top:1rem;margin-bottom:0;">
+                    <div class="card-title"><i class="ri-gift-line"></i> Top Frequent Itemsets</div>
+                    <div id="upload-itemsets-block" class="bundle-grid"></div>
+                </div>
+            </div>
+        </div>
+
         <!-- Dataset Tabs -->
         <div class="dataset-tabs">
             <button class="ds-tab active" data-dataset="A">
@@ -195,6 +247,14 @@
                     <span>Association Rules</span>
                     <strong id="stat-rules">—</strong>
                 </div>
+                <div class="metric-row">
+                    <span>Patterns Found</span>
+                    <strong id="stat-patterns">—</strong>
+                </div>
+                <div class="metric-row">
+                    <span>Est. Revenue</span>
+                    <strong id="stat-revenue" style="color:var(--accent);">—</strong>
+                </div>
             </div>
 
             <!-- Stability Report -->
@@ -276,57 +336,6 @@
             <div class="card-title"><i class="ri-lightbulb-line"></i> Business Insights</div>
             <div class="insights-grid" id="insights-grid">
                 <!-- injected by JS -->
-            </div>
-        </div>
-
-        <!-- CSV Upload / Live Ingestion -->
-        <div class="dash-card">
-            <div class="card-title"><i class="ri-upload-cloud-2-line"></i> Live Data Ingestion — Upload Custom CSV</div>
-            <div class="upload-zone" id="upload-zone">
-                <i class="ri-file-text-line upload-icon"></i>
-                <div class="upload-text">
-                    <strong>Drop a transaction CSV here</strong> or
-                    <label class="upload-label" for="csv-file-input">browse files</label>
-                    <input type="file" id="csv-file-input" accept=".csv" style="display:none;">
-                </div>
-                <div class="upload-hint text-muted small">
-                    Format: <code>transaction_id,items</code> where items are <code>|</code>-separated product IDs<br>
-                    Or use any CSV where each row has space/comma-separated item names — the engine adapts.
-                </div>
-            </div>
-            <div id="upload-status" style="display:none;"></div>
-            <div id="upload-results" style="display:none;">
-                <div class="upload-result-header">
-                    <span class="chip chip-green"><i class="ri-check-line"></i> Analysis Complete</span>
-                    <span id="upload-file-name" class="text-muted small"></span>
-                </div>
-                <div class="dash-row" style="margin-top:1rem;">
-                    <div class="dash-card" style="margin-bottom:0;">
-                        <div class="card-title"><i class="ri-database-2-line"></i> Ingested Stats</div>
-                        <div id="upload-stats-block"></div>
-                    </div>
-                    <div class="dash-card" style="margin-bottom:0;">
-                        <div class="card-title"><i class="ri-settings-4-line"></i> Auto-Tuned Config</div>
-                        <div id="upload-config-block"></div>
-                    </div>
-                </div>
-                <div class="dash-card" style="margin-top:1rem;margin-bottom:0;">
-                    <div class="card-title"><i class="ri-table-2"></i> Mined Association Rules</div>
-                    <div class="table-wrapper">
-                        <table class="data-table">
-                            <thead><tr>
-                                <th>Antecedent</th><th>Consequent</th>
-                                <th>Support</th><th>Confidence</th>
-                                <th>Lift</th><th>Leverage</th><th>Conviction</th>
-                            </tr></thead>
-                            <tbody id="upload-rules-tbody"></tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="dash-card" style="margin-top:1rem;margin-bottom:0;">
-                    <div class="card-title"><i class="ri-gift-line"></i> Top Frequent Itemsets</div>
-                    <div id="upload-itemsets-block" class="bundle-grid"></div>
-                </div>
             </div>
         </div>
 
