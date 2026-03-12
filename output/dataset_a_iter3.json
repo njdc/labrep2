@@ -1,0 +1,1317 @@
+{
+  "iteration": 3,
+  "config": {
+    "algorithm": "FP-Growth",
+    "min_support": 0.09,
+    "min_confidence": 0.56,
+    "auto_tuned": true,
+    "tuning_steps": 2,
+    "tuning_reason": "Auto-tuning converged in 2 steps; 13 rules meet quality threshold (score \u2265 0.35).",
+    "threshold_history": [
+      {
+        "step": 1,
+        "min_sup": 0.16,
+        "min_conf": 0.6,
+        "total_rules": 4,
+        "quality_rules": 4
+      },
+      {
+        "step": 2,
+        "min_sup": 0.09,
+        "min_conf": 0.56,
+        "total_rules": 13,
+        "quality_rules": 13
+      }
+    ]
+  },
+  "stats": {
+    "total_transactions": 2000,
+    "unique_items": 18,
+    "avg_basket_size": 4.22,
+    "min_basket_size": 1,
+    "max_basket_size": 9,
+    "item_frequencies": {
+      "G001": {
+        "count": 772,
+        "support": 0.386,
+        "name": "Gaming Laptop"
+      },
+      "G002": {
+        "count": 592,
+        "support": 0.296,
+        "name": "Wireless Mouse"
+      },
+      "G003": {
+        "count": 603,
+        "support": 0.3015,
+        "name": "Mechanical Keyboard"
+      },
+      "G004": {
+        "count": 499,
+        "support": 0.2495,
+        "name": "Gaming Monitor"
+      },
+      "G005": {
+        "count": 320,
+        "support": 0.16,
+        "name": "Gaming Chair"
+      },
+      "G006": {
+        "count": 299,
+        "support": 0.1495,
+        "name": "RGB Headset"
+      },
+      "G007": {
+        "count": 479,
+        "support": 0.2395,
+        "name": "Graphics Card"
+      },
+      "G008": {
+        "count": 462,
+        "support": 0.231,
+        "name": "NVMe SSD"
+      },
+      "G009": {
+        "count": 459,
+        "support": 0.2295,
+        "name": "DDR5 RAM"
+      },
+      "G010": {
+        "count": 676,
+        "support": 0.338,
+        "name": "PS5 Console"
+      },
+      "G011": {
+        "count": 379,
+        "support": 0.1895,
+        "name": "Xbox Series X"
+      },
+      "G012": {
+        "count": 183,
+        "support": 0.0915,
+        "name": "VR Headset"
+      },
+      "G013": {
+        "count": 666,
+        "support": 0.333,
+        "name": "Controller"
+      },
+      "G014": {
+        "count": 504,
+        "support": 0.252,
+        "name": "Gaming Desk"
+      },
+      "G015": {
+        "count": 286,
+        "support": 0.143,
+        "name": "USB Hub"
+      },
+      "G016": {
+        "count": 534,
+        "support": 0.267,
+        "name": "Webcam HD"
+      },
+      "G017": {
+        "count": 445,
+        "support": 0.2225,
+        "name": "Streaming Mic"
+      },
+      "G018": {
+        "count": 289,
+        "support": 0.1445,
+        "name": "LED Strip"
+      }
+    },
+    "frequent_itemsets": 37,
+    "rules_count": 13
+  },
+  "frequent_itemsets": [
+    {
+      "items": [
+        "G001"
+      ],
+      "count": 772,
+      "support": 0.386
+    },
+    {
+      "items": [
+        "G010"
+      ],
+      "count": 676,
+      "support": 0.338
+    },
+    {
+      "items": [
+        "G013"
+      ],
+      "count": 666,
+      "support": 0.333
+    },
+    {
+      "items": [
+        "G003"
+      ],
+      "count": 603,
+      "support": 0.3015
+    },
+    {
+      "items": [
+        "G002"
+      ],
+      "count": 592,
+      "support": 0.296
+    },
+    {
+      "items": [
+        "G016"
+      ],
+      "count": 534,
+      "support": 0.267
+    },
+    {
+      "items": [
+        "G014"
+      ],
+      "count": 504,
+      "support": 0.252
+    },
+    {
+      "items": [
+        "G004"
+      ],
+      "count": 499,
+      "support": 0.2495
+    },
+    {
+      "items": [
+        "G007"
+      ],
+      "count": 479,
+      "support": 0.2395
+    },
+    {
+      "items": [
+        "G008"
+      ],
+      "count": 462,
+      "support": 0.231
+    },
+    {
+      "items": [
+        "G009"
+      ],
+      "count": 459,
+      "support": 0.2295
+    },
+    {
+      "items": [
+        "G017"
+      ],
+      "count": 445,
+      "support": 0.2225
+    },
+    {
+      "items": [
+        "G002",
+        "G003"
+      ],
+      "count": 442,
+      "support": 0.221
+    },
+    {
+      "items": [
+        "G011"
+      ],
+      "count": 379,
+      "support": 0.1895
+    },
+    {
+      "items": [
+        "G010",
+        "G013"
+      ],
+      "count": 347,
+      "support": 0.1735
+    },
+    {
+      "items": [
+        "G008",
+        "G009"
+      ],
+      "count": 326,
+      "support": 0.163
+    },
+    {
+      "items": [
+        "G005"
+      ],
+      "count": 320,
+      "support": 0.16
+    },
+    {
+      "items": [
+        "G001",
+        "G003"
+      ],
+      "count": 305,
+      "support": 0.1525
+    },
+    {
+      "items": [
+        "G016",
+        "G017"
+      ],
+      "count": 301,
+      "support": 0.1505
+    },
+    {
+      "items": [
+        "G006"
+      ],
+      "count": 299,
+      "support": 0.1495
+    },
+    {
+      "items": [
+        "G001",
+        "G002"
+      ],
+      "count": 293,
+      "support": 0.1465
+    },
+    {
+      "items": [
+        "G018"
+      ],
+      "count": 289,
+      "support": 0.1445
+    },
+    {
+      "items": [
+        "G015"
+      ],
+      "count": 286,
+      "support": 0.143
+    },
+    {
+      "items": [
+        "G011",
+        "G013"
+      ],
+      "count": 271,
+      "support": 0.1355
+    },
+    {
+      "items": [
+        "G001",
+        "G004"
+      ],
+      "count": 269,
+      "support": 0.1345
+    },
+    {
+      "items": [
+        "G001",
+        "G002",
+        "G003"
+      ],
+      "count": 246,
+      "support": 0.123
+    },
+    {
+      "items": [
+        "G001",
+        "G016"
+      ],
+      "count": 239,
+      "support": 0.1195
+    },
+    {
+      "items": [
+        "G004",
+        "G007"
+      ],
+      "count": 227,
+      "support": 0.1135
+    },
+    {
+      "items": [
+        "G001",
+        "G010"
+      ],
+      "count": 217,
+      "support": 0.1085
+    },
+    {
+      "items": [
+        "G001",
+        "G013"
+      ],
+      "count": 213,
+      "support": 0.1065
+    },
+    {
+      "items": [
+        "G006",
+        "G010"
+      ],
+      "count": 208,
+      "support": 0.104
+    },
+    {
+      "items": [
+        "G005",
+        "G014"
+      ],
+      "count": 208,
+      "support": 0.104
+    },
+    {
+      "items": [
+        "G014",
+        "G018"
+      ],
+      "count": 193,
+      "support": 0.0965
+    },
+    {
+      "items": [
+        "G007",
+        "G008"
+      ],
+      "count": 188,
+      "support": 0.094
+    },
+    {
+      "items": [
+        "G001",
+        "G015"
+      ],
+      "count": 185,
+      "support": 0.0925
+    },
+    {
+      "items": [
+        "G012"
+      ],
+      "count": 183,
+      "support": 0.0915
+    },
+    {
+      "items": [
+        "G007",
+        "G009"
+      ],
+      "count": 181,
+      "support": 0.0905
+    }
+  ],
+  "rules": [
+    {
+      "antecedents": [
+        "G009"
+      ],
+      "consequents": [
+        "G008"
+      ],
+      "support": 0.163,
+      "confidence": 0.71024,
+      "lift": 3.074631,
+      "leverage": 0.109985,
+      "conviction": 2.6539,
+      "ant_support": 0.2295,
+      "con_support": 0.231,
+      "stability": "Stable",
+      "stability_score": 1.0,
+      "drift": {
+        "level": null,
+        "direction": "falling",
+        "rel_change": 0.0232,
+        "prev_support": 0.166875,
+        "curr_support": 0.163,
+        "prev_iteration": 2
+      },
+      "composite_score": 0.5997,
+      "action": "Cross-Sell"
+    },
+    {
+      "antecedents": [
+        "G008"
+      ],
+      "consequents": [
+        "G009"
+      ],
+      "support": 0.163,
+      "confidence": 0.705628,
+      "lift": 3.074631,
+      "leverage": 0.109985,
+      "conviction": 2.6174,
+      "ant_support": 0.231,
+      "con_support": 0.2295,
+      "stability": "Stable",
+      "stability_score": 1.0,
+      "drift": {
+        "level": null,
+        "direction": "falling",
+        "rel_change": 0.0232,
+        "prev_support": 0.166875,
+        "curr_support": 0.163,
+        "prev_iteration": 2
+      },
+      "composite_score": 0.5983,
+      "action": "Cross-Sell"
+    },
+    {
+      "antecedents": [
+        "G001",
+        "G002"
+      ],
+      "consequents": [
+        "G003"
+      ],
+      "support": 0.123,
+      "confidence": 0.83959,
+      "lift": 2.784711,
+      "leverage": 0.07883,
+      "conviction": 4.3545,
+      "ant_support": 0.1465,
+      "con_support": 0.3015,
+      "stability": "Stable",
+      "stability_score": 1.0,
+      "drift": {
+        "level": null,
+        "direction": "falling",
+        "rel_change": 0.0629,
+        "prev_support": 0.13125,
+        "curr_support": 0.123,
+        "prev_iteration": 2
+      },
+      "composite_score": 0.5823,
+      "action": "Cross-Sell"
+    },
+    {
+      "antecedents": [
+        "G002"
+      ],
+      "consequents": [
+        "G003"
+      ],
+      "support": 0.221,
+      "confidence": 0.746622,
+      "lift": 2.476357,
+      "leverage": 0.131756,
+      "conviction": 2.7567,
+      "ant_support": 0.296,
+      "con_support": 0.3015,
+      "stability": "Stable",
+      "stability_score": 1.0,
+      "drift": {
+        "level": null,
+        "direction": "falling",
+        "rel_change": 0.0443,
+        "prev_support": 0.23125,
+        "curr_support": 0.221,
+        "prev_iteration": 2
+      },
+      "composite_score": 0.6071,
+      "action": "Soft Suggest"
+    },
+    {
+      "antecedents": [
+        "G003"
+      ],
+      "consequents": [
+        "G002"
+      ],
+      "support": 0.221,
+      "confidence": 0.733002,
+      "lift": 2.476357,
+      "leverage": 0.131756,
+      "conviction": 2.6367,
+      "ant_support": 0.3015,
+      "con_support": 0.296,
+      "stability": "Stable",
+      "stability_score": 1.0,
+      "drift": {
+        "level": null,
+        "direction": "falling",
+        "rel_change": 0.0443,
+        "prev_support": 0.23125,
+        "curr_support": 0.221,
+        "prev_iteration": 2
+      },
+      "composite_score": 0.6031,
+      "action": "Soft Suggest"
+    },
+    {
+      "antecedents": [
+        "G001",
+        "G003"
+      ],
+      "consequents": [
+        "G002"
+      ],
+      "support": 0.123,
+      "confidence": 0.806557,
+      "lift": 2.724856,
+      "leverage": 0.07786,
+      "conviction": 3.6393,
+      "ant_support": 0.1525,
+      "con_support": 0.296,
+      "stability": "Stable",
+      "stability_score": 1.0,
+      "drift": {
+        "level": null,
+        "direction": "falling",
+        "rel_change": 0.0629,
+        "prev_support": 0.13125,
+        "curr_support": 0.123,
+        "prev_iteration": 2
+      },
+      "composite_score": 0.5674,
+      "action": "Cross-Sell"
+    },
+    {
+      "antecedents": [
+        "G017"
+      ],
+      "consequents": [
+        "G016"
+      ],
+      "support": 0.1505,
+      "confidence": 0.676404,
+      "lift": 2.53335,
+      "leverage": 0.091092,
+      "conviction": 2.2652,
+      "ant_support": 0.2225,
+      "con_support": 0.267,
+      "stability": "Stable",
+      "stability_score": 1.0,
+      "drift": {
+        "level": null,
+        "direction": "falling",
+        "rel_change": 0.0211,
+        "prev_support": 0.15375,
+        "curr_support": 0.1505,
+        "prev_iteration": 2
+      },
+      "composite_score": 0.5344,
+      "action": "Cross-Sell"
+    },
+    {
+      "antecedents": [
+        "G018"
+      ],
+      "consequents": [
+        "G014"
+      ],
+      "support": 0.0965,
+      "confidence": 0.66782,
+      "lift": 2.65008,
+      "leverage": 0.060086,
+      "conviction": 2.2518,
+      "ant_support": 0.1445,
+      "con_support": 0.252,
+      "stability": "Stable",
+      "stability_score": 0.6667,
+      "drift": {
+        "level": "Drift",
+        "direction": "falling",
+        "rel_change": 0.081,
+        "prev_support": 0.105,
+        "curr_support": 0.0965,
+        "prev_iteration": 2
+      },
+      "composite_score": 0.4984,
+      "action": "Cross-Sell"
+    },
+    {
+      "antecedents": [
+        "G016"
+      ],
+      "consequents": [
+        "G017"
+      ],
+      "support": 0.1505,
+      "confidence": 0.56367,
+      "lift": 2.53335,
+      "leverage": 0.091092,
+      "conviction": 1.7819,
+      "ant_support": 0.267,
+      "con_support": 0.2225,
+      "stability": "Stable",
+      "stability_score": 0.6667,
+      "drift": {
+        "level": null,
+        "direction": "falling",
+        "rel_change": 0.0211,
+        "prev_support": 0.15375,
+        "curr_support": 0.1505,
+        "prev_iteration": 2
+      },
+      "composite_score": 0.5006,
+      "action": "Cross-Sell"
+    },
+    {
+      "antecedents": [
+        "G005"
+      ],
+      "consequents": [
+        "G014"
+      ],
+      "support": 0.104,
+      "confidence": 0.65,
+      "lift": 2.579365,
+      "leverage": 0.06368,
+      "conviction": 2.1371,
+      "ant_support": 0.16,
+      "con_support": 0.252,
+      "stability": "Stable",
+      "stability_score": 0.6667,
+      "drift": {
+        "level": null,
+        "direction": "rising",
+        "rel_change": 0.04,
+        "prev_support": 0.1,
+        "curr_support": 0.104,
+        "prev_iteration": 2
+      },
+      "composite_score": 0.4931,
+      "action": "Cross-Sell"
+    },
+    {
+      "antecedents": [
+        "G011"
+      ],
+      "consequents": [
+        "G013"
+      ],
+      "support": 0.1355,
+      "confidence": 0.71504,
+      "lift": 2.147266,
+      "leverage": 0.072397,
+      "conviction": 2.3407,
+      "ant_support": 0.1895,
+      "con_support": 0.333,
+      "stability": "Stable",
+      "stability_score": 1.0,
+      "drift": {
+        "level": null,
+        "direction": "rising",
+        "rel_change": 0.0627,
+        "prev_support": 0.1275,
+        "curr_support": 0.1355,
+        "prev_iteration": 2
+      },
+      "composite_score": 0.5019,
+      "action": "Soft Suggest"
+    },
+    {
+      "antecedents": [
+        "G006"
+      ],
+      "consequents": [
+        "G010"
+      ],
+      "support": 0.104,
+      "confidence": 0.695652,
+      "lift": 2.058143,
+      "leverage": 0.053469,
+      "conviction": 2.1751,
+      "ant_support": 0.1495,
+      "con_support": 0.338,
+      "stability": "Stable",
+      "stability_score": 1.0,
+      "drift": {
+        "level": null,
+        "direction": "rising",
+        "rel_change": 0.0599,
+        "prev_support": 0.098125,
+        "curr_support": 0.104,
+        "prev_iteration": 2
+      },
+      "composite_score": 0.4634,
+      "action": "Soft Suggest"
+    },
+    {
+      "antecedents": [
+        "G015"
+      ],
+      "consequents": [
+        "G001"
+      ],
+      "support": 0.0925,
+      "confidence": 0.646853,
+      "lift": 1.675785,
+      "leverage": 0.037302,
+      "conviction": 1.7387,
+      "ant_support": 0.143,
+      "con_support": 0.386,
+      "stability": "Stable",
+      "stability_score": 1.0,
+      "drift": {
+        "level": null,
+        "direction": "falling",
+        "rel_change": 0.0133,
+        "prev_support": 0.09375,
+        "curr_support": 0.0925,
+        "prev_iteration": 2
+      },
+      "composite_score": 0.4077,
+      "action": "Soft Suggest"
+    }
+  ],
+  "stability_report": {
+    "stable": 13,
+    "emerging": 1,
+    "new": 0
+  },
+  "drift_report": [
+    {
+      "rule_ant": [
+        "G018"
+      ],
+      "rule_con": [
+        "G014"
+      ],
+      "level": "Drift",
+      "direction": "falling",
+      "rel_change": 0.081,
+      "prev_support": 0.105,
+      "curr_support": 0.0965,
+      "prev_iteration": 2
+    }
+  ],
+  "homepage_ranking": [
+    {
+      "product_id": "G003",
+      "score": 14.9475,
+      "rank": 1
+    },
+    {
+      "product_id": "G002",
+      "score": 14.8372,
+      "rank": 2
+    },
+    {
+      "product_id": "G008",
+      "score": 8.916,
+      "rank": 3
+    },
+    {
+      "product_id": "G009",
+      "score": 8.91,
+      "rank": 4
+    },
+    {
+      "product_id": "G014",
+      "score": 8.2958,
+      "rank": 5
+    },
+    {
+      "product_id": "G016",
+      "score": 7.5462,
+      "rank": 6
+    },
+    {
+      "product_id": "G017",
+      "score": 7.3682,
+      "rank": 7
+    },
+    {
+      "product_id": "G001",
+      "score": 5.8801,
+      "rank": 8
+    },
+    {
+      "product_id": "G013",
+      "score": 5.8235,
+      "rank": 9
+    },
+    {
+      "product_id": "G010",
+      "score": 4.9206,
+      "rank": 10
+    },
+    {
+      "product_id": "G011",
+      "score": 2.571,
+      "rank": 11
+    },
+    {
+      "product_id": "G005",
+      "score": 2.264,
+      "rank": 12
+    },
+    {
+      "product_id": "G006",
+      "score": 2.222,
+      "rank": 13
+    },
+    {
+      "product_id": "G018",
+      "score": 2.157,
+      "rank": 14
+    },
+    {
+      "product_id": "G015",
+      "score": 2.127,
+      "rank": 15
+    },
+    {
+      "product_id": "G004",
+      "score": 1.998,
+      "rank": 16
+    },
+    {
+      "product_id": "G007",
+      "score": 1.958,
+      "rank": 17
+    },
+    {
+      "product_id": "G012",
+      "score": 1.366,
+      "rank": 18
+    }
+  ],
+  "frequently_bought_together": [
+    {
+      "items": [
+        "G002",
+        "G003"
+      ],
+      "support": 0.221,
+      "count": 442
+    },
+    {
+      "items": [
+        "G010",
+        "G013"
+      ],
+      "support": 0.1735,
+      "count": 347
+    },
+    {
+      "items": [
+        "G008",
+        "G009"
+      ],
+      "support": 0.163,
+      "count": 326
+    },
+    {
+      "items": [
+        "G001",
+        "G003"
+      ],
+      "support": 0.1525,
+      "count": 305
+    },
+    {
+      "items": [
+        "G016",
+        "G017"
+      ],
+      "support": 0.1505,
+      "count": 301
+    },
+    {
+      "items": [
+        "G001",
+        "G002"
+      ],
+      "support": 0.1465,
+      "count": 293
+    },
+    {
+      "items": [
+        "G011",
+        "G013"
+      ],
+      "support": 0.1355,
+      "count": 271
+    },
+    {
+      "items": [
+        "G001",
+        "G004"
+      ],
+      "support": 0.1345,
+      "count": 269
+    },
+    {
+      "items": [
+        "G001",
+        "G002",
+        "G003"
+      ],
+      "support": 0.123,
+      "count": 246
+    },
+    {
+      "items": [
+        "G001",
+        "G016"
+      ],
+      "support": 0.1195,
+      "count": 239
+    }
+  ],
+  "cross_sell": {
+    "G001": [
+      {
+        "product_id": "G003",
+        "confidence": 0.83959,
+        "lift": 2.784711,
+        "score": 2.338,
+        "reason": "84% of customers who buy Gaming Laptop also buy Mechanical Keyboard"
+      },
+      {
+        "product_id": "G002",
+        "confidence": 0.806557,
+        "lift": 2.724856,
+        "score": 2.1978,
+        "reason": "81% of customers who buy Gaming Laptop also buy Wireless Mouse"
+      }
+    ],
+    "G002": [
+      {
+        "product_id": "G003",
+        "confidence": 0.83959,
+        "lift": 2.784711,
+        "score": 2.338,
+        "reason": "84% of customers who buy Wireless Mouse also buy Mechanical Keyboard"
+      }
+    ],
+    "G003": [
+      {
+        "product_id": "G002",
+        "confidence": 0.806557,
+        "lift": 2.724856,
+        "score": 2.1978,
+        "reason": "81% of customers who buy Mechanical Keyboard also buy Wireless Mouse"
+      }
+    ],
+    "G004": [],
+    "G005": [
+      {
+        "product_id": "G014",
+        "confidence": 0.65,
+        "lift": 2.579365,
+        "score": 1.6766,
+        "reason": "65% of customers who buy Gaming Chair also buy Gaming Desk"
+      }
+    ],
+    "G006": [
+      {
+        "product_id": "G010",
+        "confidence": 0.695652,
+        "lift": 2.058143,
+        "score": 1.4318,
+        "reason": "70% of customers who buy RGB Headset also buy PS5 Console"
+      }
+    ],
+    "G007": [],
+    "G008": [
+      {
+        "product_id": "G009",
+        "confidence": 0.705628,
+        "lift": 3.074631,
+        "score": 2.1695,
+        "reason": "71% of customers who buy NVMe SSD also buy DDR5 RAM"
+      }
+    ],
+    "G009": [
+      {
+        "product_id": "G008",
+        "confidence": 0.71024,
+        "lift": 3.074631,
+        "score": 2.1837,
+        "reason": "71% of customers who buy DDR5 RAM also buy NVMe SSD"
+      }
+    ],
+    "G010": [],
+    "G011": [
+      {
+        "product_id": "G013",
+        "confidence": 0.71504,
+        "lift": 2.147266,
+        "score": 1.5354,
+        "reason": "72% of customers who buy Xbox Series X also buy Controller"
+      }
+    ],
+    "G012": [],
+    "G013": [],
+    "G014": [],
+    "G015": [
+      {
+        "product_id": "G001",
+        "confidence": 0.646853,
+        "lift": 1.675785,
+        "score": 1.084,
+        "reason": "65% of customers who buy USB Hub also buy Gaming Laptop"
+      }
+    ],
+    "G016": [
+      {
+        "product_id": "G017",
+        "confidence": 0.56367,
+        "lift": 2.53335,
+        "score": 1.428,
+        "reason": "56% of customers who buy Webcam HD also buy Streaming Mic"
+      }
+    ],
+    "G017": [
+      {
+        "product_id": "G016",
+        "confidence": 0.676404,
+        "lift": 2.53335,
+        "score": 1.7136,
+        "reason": "68% of customers who buy Streaming Mic also buy Webcam HD"
+      }
+    ],
+    "G018": [
+      {
+        "product_id": "G014",
+        "confidence": 0.66782,
+        "lift": 2.65008,
+        "score": 1.7698,
+        "reason": "67% of customers who buy LED Strip also buy Gaming Desk"
+      }
+    ]
+  },
+  "bundles": [
+    {
+      "items": [
+        "G002",
+        "G003"
+      ],
+      "item_names": [
+        "Wireless Mouse",
+        "Mechanical Keyboard"
+      ],
+      "support": 0.221,
+      "original_price": 208.0,
+      "bundle_price": 187.2,
+      "discount_pct": 10,
+      "savings": 20.8
+    },
+    {
+      "items": [
+        "G010",
+        "G013"
+      ],
+      "item_names": [
+        "PS5 Console",
+        "Controller"
+      ],
+      "support": 0.1735,
+      "original_price": 568.0,
+      "bundle_price": 511.2,
+      "discount_pct": 10,
+      "savings": 56.8
+    },
+    {
+      "items": [
+        "G008",
+        "G009"
+      ],
+      "item_names": [
+        "NVMe SSD",
+        "DDR5 RAM"
+      ],
+      "support": 0.163,
+      "original_price": 328.0,
+      "bundle_price": 295.2,
+      "discount_pct": 10,
+      "savings": 32.8
+    },
+    {
+      "items": [
+        "G001",
+        "G003"
+      ],
+      "item_names": [
+        "Gaming Laptop",
+        "Mechanical Keyboard"
+      ],
+      "support": 0.1525,
+      "original_price": 1628.0,
+      "bundle_price": 1465.2,
+      "discount_pct": 10,
+      "savings": 162.8
+    },
+    {
+      "items": [
+        "G016",
+        "G017"
+      ],
+      "item_names": [
+        "Webcam HD",
+        "Streaming Mic"
+      ],
+      "support": 0.1505,
+      "original_price": 238.0,
+      "bundle_price": 214.2,
+      "discount_pct": 10,
+      "savings": 23.8
+    },
+    {
+      "items": [
+        "G001",
+        "G002"
+      ],
+      "item_names": [
+        "Gaming Laptop",
+        "Wireless Mouse"
+      ],
+      "support": 0.1465,
+      "original_price": 1578.0,
+      "bundle_price": 1420.2,
+      "discount_pct": 10,
+      "savings": 157.8
+    },
+    {
+      "items": [
+        "G011",
+        "G013"
+      ],
+      "item_names": [
+        "Xbox Series X",
+        "Controller"
+      ],
+      "support": 0.1355,
+      "original_price": 568.0,
+      "bundle_price": 511.2,
+      "discount_pct": 10,
+      "savings": 56.8
+    },
+    {
+      "items": [
+        "G001",
+        "G004"
+      ],
+      "item_names": [
+        "Gaming Laptop",
+        "Gaming Monitor"
+      ],
+      "support": 0.1345,
+      "original_price": 1848.0,
+      "bundle_price": 1663.2,
+      "discount_pct": 10,
+      "savings": 184.8
+    }
+  ],
+  "promos": [
+    {
+      "title": "Combo Deal: Gaming Laptop + Wireless Mouse",
+      "description": "Add Gaming Laptop and Wireless Mouse to your cart and get Mechanical Keyboard at 25% off!",
+      "type": "buy2get1",
+      "discount": 25,
+      "lift": 2.784711,
+      "confidence": 0.83959,
+      "trigger_items": [
+        "G001",
+        "G002"
+      ],
+      "target_items": [
+        "G003"
+      ]
+    },
+    {
+      "title": "Combo Deal: Gaming Laptop + Mechanical Keyboard",
+      "description": "Add Gaming Laptop and Mechanical Keyboard to your cart and get Wireless Mouse at 25% off!",
+      "type": "buy2get1",
+      "discount": 25,
+      "lift": 2.724856,
+      "confidence": 0.806557,
+      "trigger_items": [
+        "G001",
+        "G003"
+      ],
+      "target_items": [
+        "G002"
+      ]
+    },
+    {
+      "title": "DDR5 RAM Bundle",
+      "description": "Buy DDR5 RAM and save 20% on NVMe SSD. (71% of buyers choose this combo)",
+      "type": "bundle_discount",
+      "discount": 20,
+      "lift": 3.074631,
+      "confidence": 0.71024,
+      "trigger_items": [
+        "G009"
+      ],
+      "target_items": [
+        "G008"
+      ]
+    },
+    {
+      "title": "NVMe SSD Bundle",
+      "description": "Buy NVMe SSD and save 20% on DDR5 RAM. (71% of buyers choose this combo)",
+      "type": "bundle_discount",
+      "discount": 20,
+      "lift": 3.074631,
+      "confidence": 0.705628,
+      "trigger_items": [
+        "G008"
+      ],
+      "target_items": [
+        "G009"
+      ]
+    },
+    {
+      "title": "Wireless Mouse Bundle",
+      "description": "Buy Wireless Mouse and save 20% on Mechanical Keyboard. (75% of buyers choose this combo)",
+      "type": "bundle_discount",
+      "discount": 20,
+      "lift": 2.476357,
+      "confidence": 0.746622,
+      "trigger_items": [
+        "G002"
+      ],
+      "target_items": [
+        "G003"
+      ]
+    }
+  ],
+  "insights": [
+    {
+      "type": "anchor_product",
+      "icon": "ri-anchor-line",
+      "title": "Anchor Product: Wireless Mouse",
+      "description": "Wireless Mouse appears in 4 association rules \u2014 feature it prominently on the homepage and in paid ads to maximise cross-sell chain reactions.",
+      "items": [
+        "G002"
+      ]
+    },
+    {
+      "type": "shelf_placement",
+      "icon": "ri-layout-grid-line",
+      "title": "Top Co-Purchase Pair \u2014 Co-locate in Store",
+      "description": "Wireless Mouse and Mechanical Keyboard are bought together 22.1% of the time. Place them adjacent on the shelf or in the same product listing cluster to reduce friction.",
+      "items": [
+        "G002",
+        "G003"
+      ]
+    },
+    {
+      "type": "category_synergy",
+      "icon": "ri-links-line",
+      "title": "Category Synergy: Computers \u2194 Peripherals",
+      "description": "Products in 'Computers' and 'Peripherals' appear together in 2 rules (avg lift 2.75\u00d7). Consider cross-category email campaigns and bundled landing pages.",
+      "items": []
+    },
+    {
+      "type": "promo_opportunity",
+      "icon": "ri-price-tag-3-line",
+      "title": "Highest-Lift Bundle Opportunity",
+      "description": "'DDR5 RAM \u2192 NVMe SSD' has lift 3.07\u00d7 and confidence 71%. This pair is far more likely than chance \u2014 launch a limited-time bundle discount to capture maximum revenue.",
+      "items": [
+        "G009",
+        "G008"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1327 @@
+{
+  "iteration": 3,
+  "config": {
+    "algorithm": "FP-Growth",
+    "min_support": 0.09,
+    "min_confidence": 0.56,
+    "auto_tuned": true,
+    "tuning_steps": 2,
+    "tuning_reason": "Auto-tuning converged in 2 steps; 13 rules meet quality threshold (score \u2265 0.35).",
+    "threshold_history": [
+      {
+        "step": 1,
+        "min_sup": 0.16,
+        "min_conf": 0.6,
+        "total_rules": 3,
+        "quality_rules": 3
+      },
+      {
+        "step": 2,
+        "min_sup": 0.09,
+        "min_conf": 0.56,
+        "total_rules": 13,
+        "quality_rules": 13
+      }
+    ]
+  },
+  "stats": {
+    "total_transactions": 1600,
+    "unique_items": 18,
+    "avg_basket_size": 4.26,
+    "min_basket_size": 1,
+    "max_basket_size": 9,
+    "item_frequencies": {
+      "O001": {
+        "count": 451,
+        "support": 0.2819,
+        "name": "Ergonomic Chair"
+      },
+      "O002": {
+        "count": 476,
+        "support": 0.2975,
+        "name": "Standing Desk"
+      },
+      "O003": {
+        "count": 464,
+        "support": 0.29,
+        "name": "Office Monitor"
+      },
+      "O004": {
+        "count": 439,
+        "support": 0.2744,
+        "name": "Wireless Keyboard"
+      },
+      "O005": {
+        "count": 435,
+        "support": 0.2719,
+        "name": "Wireless Mouse"
+      },
+      "O006": {
+        "count": 410,
+        "support": 0.2562,
+        "name": "HD Webcam"
+      },
+      "O007": {
+        "count": 491,
+        "support": 0.3069,
+        "name": "Laser Printer"
+      },
+      "O008": {
+        "count": 387,
+        "support": 0.2419,
+        "name": "Document Scanner"
+      },
+      "O009": {
+        "count": 339,
+        "support": 0.2119,
+        "name": "Paper Shredder"
+      },
+      "O010": {
+        "count": 493,
+        "support": 0.3081,
+        "name": "Desk Lamp"
+      },
+      "O011": {
+        "count": 214,
+        "support": 0.1338,
+        "name": "Coffee Maker"
+      },
+      "O012": {
+        "count": 260,
+        "support": 0.1625,
+        "name": "Whiteboard"
+      },
+      "O013": {
+        "count": 275,
+        "support": 0.1719,
+        "name": "Planner / Calendar"
+      },
+      "O014": {
+        "count": 480,
+        "support": 0.3,
+        "name": "Laptop Stand"
+      },
+      "O015": {
+        "count": 275,
+        "support": 0.1719,
+        "name": "Cable Organizer"
+      },
+      "O016": {
+        "count": 340,
+        "support": 0.2125,
+        "name": "Noise-Cancel Headphones"
+      },
+      "O017": {
+        "count": 247,
+        "support": 0.1544,
+        "name": "Desk Organizer"
+      },
+      "O018": {
+        "count": 336,
+        "support": 0.21,
+        "name": "Monitor Arm"
+      }
+    },
+    "frequent_itemsets": 34,
+    "rules_count": 13
+  },
+  "frequent_itemsets": [
+    {
+      "items": [
+        "O010"
+      ],
+      "count": 493,
+      "support": 0.308125
+    },
+    {
+      "items": [
+        "O007"
+      ],
+      "count": 491,
+      "support": 0.306875
+    },
+    {
+      "items": [
+        "O014"
+      ],
+      "count": 480,
+      "support": 0.3
+    },
+    {
+      "items": [
+        "O002"
+      ],
+      "count": 476,
+      "support": 0.2975
+    },
+    {
+      "items": [
+        "O003"
+      ],
+      "count": 464,
+      "support": 0.29
+    },
+    {
+      "items": [
+        "O001"
+      ],
+      "count": 451,
+      "support": 0.281875
+    },
+    {
+      "items": [
+        "O004"
+      ],
+      "count": 439,
+      "support": 0.274375
+    },
+    {
+      "items": [
+        "O005"
+      ],
+      "count": 435,
+      "support": 0.271875
+    },
+    {
+      "items": [
+        "O006"
+      ],
+      "count": 410,
+      "support": 0.25625
+    },
+    {
+      "items": [
+        "O008"
+      ],
+      "count": 387,
+      "support": 0.241875
+    },
+    {
+      "items": [
+        "O016"
+      ],
+      "count": 340,
+      "support": 0.2125
+    },
+    {
+      "items": [
+        "O009"
+      ],
+      "count": 339,
+      "support": 0.211875
+    },
+    {
+      "items": [
+        "O018"
+      ],
+      "count": 336,
+      "support": 0.21
+    },
+    {
+      "items": [
+        "O004",
+        "O005"
+      ],
+      "count": 297,
+      "support": 0.185625
+    },
+    {
+      "items": [
+        "O013"
+      ],
+      "count": 275,
+      "support": 0.171875
+    },
+    {
+      "items": [
+        "O015"
+      ],
+      "count": 275,
+      "support": 0.171875
+    },
+    {
+      "items": [
+        "O007",
+        "O008"
+      ],
+      "count": 268,
+      "support": 0.1675
+    },
+    {
+      "items": [
+        "O012"
+      ],
+      "count": 260,
+      "support": 0.1625
+    },
+    {
+      "items": [
+        "O017"
+      ],
+      "count": 247,
+      "support": 0.154375
+    },
+    {
+      "items": [
+        "O006",
+        "O016"
+      ],
+      "count": 235,
+      "support": 0.146875
+    },
+    {
+      "items": [
+        "O001",
+        "O002"
+      ],
+      "count": 235,
+      "support": 0.146875
+    },
+    {
+      "items": [
+        "O007",
+        "O009"
+      ],
+      "count": 224,
+      "support": 0.14
+    },
+    {
+      "items": [
+        "O011"
+      ],
+      "count": 214,
+      "support": 0.13375
+    },
+    {
+      "items": [
+        "O004",
+        "O014"
+      ],
+      "count": 207,
+      "support": 0.129375
+    },
+    {
+      "items": [
+        "O005",
+        "O014"
+      ],
+      "count": 205,
+      "support": 0.128125
+    },
+    {
+      "items": [
+        "O002",
+        "O018"
+      ],
+      "count": 195,
+      "support": 0.121875
+    },
+    {
+      "items": [
+        "O003",
+        "O004"
+      ],
+      "count": 191,
+      "support": 0.119375
+    },
+    {
+      "items": [
+        "O014",
+        "O015"
+      ],
+      "count": 188,
+      "support": 0.1175
+    },
+    {
+      "items": [
+        "O010",
+        "O017"
+      ],
+      "count": 182,
+      "support": 0.11375
+    },
+    {
+      "items": [
+        "O003",
+        "O005"
+      ],
+      "count": 182,
+      "support": 0.11375
+    },
+    {
+      "items": [
+        "O001",
+        "O010"
+      ],
+      "count": 178,
+      "support": 0.11125
+    },
+    {
+      "items": [
+        "O012",
+        "O013"
+      ],
+      "count": 174,
+      "support": 0.10875
+    },
+    {
+      "items": [
+        "O004",
+        "O005",
+        "O014"
+      ],
+      "count": 161,
+      "support": 0.100625
+    },
+    {
+      "items": [
+        "O003",
+        "O006"
+      ],
+      "count": 153,
+      "support": 0.095625
+    }
+  ],
+  "rules": [
+    {
+      "antecedents": [
+        "O012"
+      ],
+      "consequents": [
+        "O013"
+      ],
+      "support": 0.10875,
+      "confidence": 0.669231,
+      "lift": 3.893706,
+      "leverage": 0.08082,
+      "conviction": 2.5036,
+      "ant_support": 0.1625,
+      "con_support": 0.171875,
+      "stability": "Stable",
+      "stability_score": 1.0,
+      "drift": {
+        "level": "Drift",
+        "direction": "falling",
+        "rel_change": 0.082,
+        "prev_support": 0.118462,
+        "curr_support": 0.10875,
+        "prev_iteration": 2
+      },
+      "composite_score": 0.6122,
+      "action": "Bundle Deal"
+    },
+    {
+      "antecedents": [
+        "O013"
+      ],
+      "consequents": [
+        "O012"
+      ],
+      "support": 0.10875,
+      "confidence": 0.632727,
+      "lift": 3.893706,
+      "leverage": 0.08082,
+      "conviction": 2.2803,
+      "ant_support": 0.171875,
+      "con_support": 0.1625,
+      "stability": "Stable",
+      "stability_score": 1.0,
+      "drift": {
+        "level": "Drift",
+        "direction": "falling",
+        "rel_change": 0.082,
+        "prev_support": 0.118462,
+        "curr_support": 0.10875,
+        "prev_iteration": 2
+      },
+      "composite_score": 0.6013,
+      "action": "Cross-Sell"
+    },
+    {
+      "antecedents": [
+        "O005",
+        "O014"
+      ],
+      "consequents": [
+        "O004"
+      ],
+      "support": 0.100625,
+      "confidence": 0.785366,
+      "lift": 2.862381,
+      "leverage": 0.065471,
+      "conviction": 3.3808,
+      "ant_support": 0.128125,
+      "con_support": 0.274375,
+      "stability": "Stable",
+      "stability_score": 1.0,
+      "drift": {
+        "level": null,
+        "direction": "falling",
+        "rel_change": 0.0589,
+        "prev_support": 0.106923,
+        "curr_support": 0.100625,
+        "prev_iteration": 2
+      },
+      "composite_score": 0.5546,
+      "action": "Cross-Sell"
+    },
+    {
+      "antecedents": [
+        "O004",
+        "O014"
+      ],
+      "consequents": [
+        "O005"
+      ],
+      "support": 0.100625,
+      "confidence": 0.777778,
+      "lift": 2.860792,
+      "leverage": 0.065451,
+      "conviction": 3.2766,
+      "ant_support": 0.129375,
+      "con_support": 0.271875,
+      "stability": "Stable",
+      "stability_score": 1.0,
+      "drift": {
+        "level": null,
+        "direction": "falling",
+        "rel_change": 0.0589,
+        "prev_support": 0.106923,
+        "curr_support": 0.100625,
+        "prev_iteration": 2
+      },
+      "composite_score": 0.5522,
+      "action": "Cross-Sell"
+    },
+    {
+      "antecedents": [
+        "O016"
+      ],
+      "consequents": [
+        "O006"
+      ],
+      "support": 0.146875,
+      "confidence": 0.691176,
+      "lift": 2.697274,
+      "leverage": 0.092422,
+      "conviction": 2.4083,
+      "ant_support": 0.2125,
+      "con_support": 0.25625,
+      "stability": "Stable",
+      "stability_score": 1.0,
+      "drift": {
+        "level": null,
+        "direction": "rising",
+        "rel_change": 0.0102,
+        "prev_support": 0.145385,
+        "curr_support": 0.146875,
+        "prev_iteration": 2
+      },
+      "composite_score": 0.5496,
+      "action": "Cross-Sell"
+    },
+    {
+      "antecedents": [
+        "O005"
+      ],
+      "consequents": [
+        "O004"
+      ],
+      "support": 0.185625,
+      "confidence": 0.682759,
+      "lift": 2.488414,
+      "leverage": 0.111029,
+      "conviction": 2.2873,
+      "ant_support": 0.271875,
+      "con_support": 0.274375,
+      "stability": "Stable",
+      "stability_score": 1.0,
+      "drift": {
+        "level": null,
+        "direction": "falling",
+        "rel_change": 0.0462,
+        "prev_support": 0.194615,
+        "curr_support": 0.185625,
+        "prev_iteration": 2
+      },
+      "composite_score": 0.5607,
+      "action": "Soft Suggest"
+    },
+    {
+      "antecedents": [
+        "O004"
+      ],
+      "consequents": [
+        "O005"
+      ],
+      "support": 0.185625,
+      "confidence": 0.676538,
+      "lift": 2.488414,
+      "leverage": 0.111029,
+      "conviction": 2.251,
+      "ant_support": 0.274375,
+      "con_support": 0.271875,
+      "stability": "Stable",
+      "stability_score": 1.0,
+      "drift": {
+        "level": null,
+        "direction": "falling",
+        "rel_change": 0.0462,
+        "prev_support": 0.194615,
+        "curr_support": 0.185625,
+        "prev_iteration": 2
+      },
+      "composite_score": 0.5588,
+      "action": "Soft Suggest"
+    },
+    {
+      "antecedents": [
+        "O006"
+      ],
+      "consequents": [
+        "O016"
+      ],
+      "support": 0.146875,
+      "confidence": 0.573171,
+      "lift": 2.697274,
+      "leverage": 0.092422,
+      "conviction": 1.845,
+      "ant_support": 0.25625,
+      "con_support": 0.2125,
+      "stability": "Emerging",
+      "stability_score": 0.3333,
+      "drift": null,
+      "composite_score": 0.5142,
+      "action": "Cross-Sell"
+    },
+    {
+      "antecedents": [
+        "O008"
+      ],
+      "consequents": [
+        "O007"
+      ],
+      "support": 0.1675,
+      "confidence": 0.692506,
+      "lift": 2.25664,
+      "leverage": 0.093275,
+      "conviction": 2.2541,
+      "ant_support": 0.241875,
+      "con_support": 0.306875,
+      "stability": "Stable",
+      "stability_score": 1.0,
+      "drift": {
+        "level": "Drift",
+        "direction": "rising",
+        "rel_change": 0.0833,
+        "prev_support": 0.154615,
+        "curr_support": 0.1675,
+        "prev_iteration": 2
+      },
+      "composite_score": 0.5298,
+      "action": "Soft Suggest"
+    },
+    {
+      "antecedents": [
+        "O017"
+      ],
+      "consequents": [
+        "O010"
+      ],
+      "support": 0.11375,
+      "confidence": 0.736842,
+      "lift": 2.391374,
+      "leverage": 0.066183,
+      "conviction": 2.6291,
+      "ant_support": 0.154375,
+      "con_support": 0.308125,
+      "stability": "Stable",
+      "stability_score": 1.0,
+      "drift": {
+        "level": null,
+        "direction": "falling",
+        "rel_change": 0.0142,
+        "prev_support": 0.115385,
+        "curr_support": 0.11375,
+        "prev_iteration": 2
+      },
+      "composite_score": 0.5113,
+      "action": "Soft Suggest"
+    },
+    {
+      "antecedents": [
+        "O015"
+      ],
+      "consequents": [
+        "O014"
+      ],
+      "support": 0.1175,
+      "confidence": 0.683636,
+      "lift": 2.278788,
+      "leverage": 0.065937,
+      "conviction": 2.2126,
+      "ant_support": 0.171875,
+      "con_support": 0.3,
+      "stability": "Stable",
+      "stability_score": 1.0,
+      "drift": {
+        "level": null,
+        "direction": "falling",
+        "rel_change": 0.0208,
+        "prev_support": 0.12,
+        "curr_support": 0.1175,
+        "prev_iteration": 2
+      },
+      "composite_score": 0.489,
+      "action": "Soft Suggest"
+    },
+    {
+      "antecedents": [
+        "O009"
+      ],
+      "consequents": [
+        "O007"
+      ],
+      "support": 0.14,
+      "confidence": 0.660767,
+      "lift": 2.153212,
+      "leverage": 0.074981,
+      "conviction": 2.0432,
+      "ant_support": 0.211875,
+      "con_support": 0.306875,
+      "stability": "Stable",
+      "stability_score": 1.0,
+      "drift": {
+        "level": "Drift",
+        "direction": "rising",
+        "rel_change": 0.1098,
+        "prev_support": 0.126154,
+        "curr_support": 0.14,
+        "prev_iteration": 2
+      },
+      "composite_score": 0.4897,
+      "action": "Soft Suggest"
+    },
+    {
+      "antecedents": [
+        "O018"
+      ],
+      "consequents": [
+        "O002"
+      ],
+      "support": 0.121875,
+      "confidence": 0.580357,
+      "lift": 1.95078,
+      "leverage": 0.0594,
+      "conviction": 1.674,
+      "ant_support": 0.21,
+      "con_support": 0.2975,
+      "stability": "Stable",
+      "stability_score": 1.0,
+      "drift": {
+        "level": null,
+        "direction": "falling",
+        "rel_change": 0.0035,
+        "prev_support": 0.122308,
+        "curr_support": 0.121875,
+        "prev_iteration": 2
+      },
+      "composite_score": 0.4342,
+      "action": "Soft Suggest"
+    }
+  ],
+  "stability_report": {
+    "stable": 12,
+    "emerging": 3,
+    "new": 0
+  },
+  "drift_report": [
+    {
+      "rule_ant": [
+        "O013"
+      ],
+      "rule_con": [
+        "O012"
+      ],
+      "level": "Drift",
+      "direction": "falling",
+      "rel_change": 0.082,
+      "prev_support": 0.118462,
+      "curr_support": 0.10875,
+      "prev_iteration": 2
+    },
+    {
+      "rule_ant": [
+        "O012"
+      ],
+      "rule_con": [
+        "O013"
+      ],
+      "level": "Drift",
+      "direction": "falling",
+      "rel_change": 0.082,
+      "prev_support": 0.118462,
+      "curr_support": 0.10875,
+      "prev_iteration": 2
+    },
+    {
+      "rule_ant": [
+        "O009"
+      ],
+      "rule_con": [
+        "O007"
+      ],
+      "level": "Drift",
+      "direction": "rising",
+      "rel_change": 0.1098,
+      "prev_support": 0.126154,
+      "curr_support": 0.14,
+      "prev_iteration": 2
+    },
+    {
+      "rule_ant": [
+        "O008"
+      ],
+      "rule_con": [
+        "O007"
+      ],
+      "level": "Drift",
+      "direction": "rising",
+      "rel_change": 0.0833,
+      "prev_support": 0.154615,
+      "curr_support": 0.1675,
+      "prev_iteration": 2
+    }
+  ],
+  "homepage_ranking": [
+    {
+      "product_id": "O004",
+      "score": 12.8143,
+      "rank": 1
+    },
+    {
+      "product_id": "O005",
+      "score": 12.8023,
+      "rank": 2
+    },
+    {
+      "product_id": "O007",
+      "score": 10.3807,
+      "rank": 3
+    },
+    {
+      "product_id": "O006",
+      "score": 7.6602,
+      "rank": 4
+    },
+    {
+      "product_id": "O016",
+      "score": 7.4852,
+      "rank": 5
+    },
+    {
+      "product_id": "O013",
+      "score": 7.4213,
+      "rank": 6
+    },
+    {
+      "product_id": "O012",
+      "score": 7.3838,
+      "rank": 7
+    },
+    {
+      "product_id": "O014",
+      "score": 6.6206,
+      "rank": 8
+    },
+    {
+      "product_id": "O010",
+      "score": 5.4967,
+      "rank": 9
+    },
+    {
+      "product_id": "O002",
+      "score": 5.043,
+      "rank": 10
+    },
+    {
+      "product_id": "O008",
+      "score": 2.9725,
+      "rank": 11
+    },
+    {
+      "product_id": "O009",
+      "score": 2.6875,
+      "rank": 12
+    },
+    {
+      "product_id": "O018",
+      "score": 2.5713,
+      "rank": 13
+    },
+    {
+      "product_id": "O015",
+      "score": 2.3925,
+      "rank": 14
+    },
+    {
+      "product_id": "O017",
+      "score": 2.3,
+      "rank": 15
+    },
+    {
+      "product_id": "O003",
+      "score": 2.16,
+      "rank": 16
+    },
+    {
+      "product_id": "O001",
+      "score": 2.1275,
+      "rank": 17
+    },
+    {
+      "product_id": "O011",
+      "score": 1.535,
+      "rank": 18
+    }
+  ],
+  "frequently_bought_together": [
+    {
+      "items": [
+        "O004",
+        "O005"
+      ],
+      "support": 0.185625,
+      "count": 297
+    },
+    {
+      "items": [
+        "O007",
+        "O008"
+      ],
+      "support": 0.1675,
+      "count": 268
+    },
+    {
+      "items": [
+        "O006",
+        "O016"
+      ],
+      "support": 0.146875,
+      "count": 235
+    },
+    {
+      "items": [
+        "O001",
+        "O002"
+      ],
+      "support": 0.146875,
+      "count": 235
+    },
+    {
+      "items": [
+        "O007",
+        "O009"
+      ],
+      "support": 0.14,
+      "count": 224
+    },
+    {
+      "items": [
+        "O004",
+        "O014"
+      ],
+      "support": 0.129375,
+      "count": 207
+    },
+    {
+      "items": [
+        "O005",
+        "O014"
+      ],
+      "support": 0.128125,
+      "count": 205
+    },
+    {
+      "items": [
+        "O002",
+        "O018"
+      ],
+      "support": 0.121875,
+      "count": 195
+    },
+    {
+      "items": [
+        "O003",
+        "O004"
+      ],
+      "support": 0.119375,
+      "count": 191
+    },
+    {
+      "items": [
+        "O014",
+        "O015"
+      ],
+      "support": 0.1175,
+      "count": 188
+    }
+  ],
+  "cross_sell": {
+    "O001": [],
+    "O002": [],
+    "O003": [],
+    "O004": [
+      {
+        "product_id": "O005",
+        "confidence": 0.777778,
+        "lift": 2.860792,
+        "score": 2.2251,
+        "reason": "78% of customers who buy Wireless Keyboard also buy Wireless Mouse"
+      }
+    ],
+    "O005": [
+      {
+        "product_id": "O004",
+        "confidence": 0.785366,
+        "lift": 2.862381,
+        "score": 2.248,
+        "reason": "79% of customers who buy Wireless Mouse also buy Wireless Keyboard"
+      }
+    ],
+    "O006": [
+      {
+        "product_id": "O016",
+        "confidence": 0.573171,
+        "lift": 2.697274,
+        "score": 1.546,
+        "reason": "57% of customers who buy HD Webcam also buy Noise-Cancel Headphones"
+      }
+    ],
+    "O007": [],
+    "O008": [
+      {
+        "product_id": "O007",
+        "confidence": 0.692506,
+        "lift": 2.25664,
+        "score": 1.5627,
+        "reason": "69% of customers who buy Document Scanner also buy Laser Printer"
+      }
+    ],
+    "O009": [
+      {
+        "product_id": "O007",
+        "confidence": 0.660767,
+        "lift": 2.153212,
+        "score": 1.4228,
+        "reason": "66% of customers who buy Paper Shredder also buy Laser Printer"
+      }
+    ],
+    "O010": [],
+    "O011": [],
+    "O012": [
+      {
+        "product_id": "O013",
+        "confidence": 0.669231,
+        "lift": 3.893706,
+        "score": 2.6058,
+        "reason": "67% of customers who buy Whiteboard also buy Planner / Calendar"
+      }
+    ],
+    "O013": [
+      {
+        "product_id": "O012",
+        "confidence": 0.632727,
+        "lift": 3.893706,
+        "score": 2.4637,
+        "reason": "63% of customers who buy Planner / Calendar also buy Whiteboard"
+      }
+    ],
+    "O014": [
+      {
+        "product_id": "O004",
+        "confidence": 0.785366,
+        "lift": 2.862381,
+        "score": 2.248,
+        "reason": "79% of customers who buy Laptop Stand also buy Wireless Keyboard"
+      },
+      {
+        "product_id": "O005",
+        "confidence": 0.777778,
+        "lift": 2.860792,
+        "score": 2.2251,
+        "reason": "78% of customers who buy Laptop Stand also buy Wireless Mouse"
+      }
+    ],
+    "O015": [
+      {
+        "product_id": "O014",
+        "confidence": 0.683636,
+        "lift": 2.278788,
+        "score": 1.5579,
+        "reason": "68% of customers who buy Cable Organizer also buy Laptop Stand"
+      }
+    ],
+    "O016": [
+      {
+        "product_id": "O006",
+        "confidence": 0.691176,
+        "lift": 2.697274,
+        "score": 1.8643,
+        "reason": "69% of customers who buy Noise-Cancel Headphones also buy HD Webcam"
+      }
+    ],
+    "O017": [
+      {
+        "product_id": "O010",
+        "confidence": 0.736842,
+        "lift": 2.391374,
+        "score": 1.7621,
+        "reason": "74% of customers who buy Desk Organizer also buy Desk Lamp"
+      }
+    ],
+    "O018": [
+      {
+        "product_id": "O002",
+        "confidence": 0.580357,
+        "lift": 1.95078,
+        "score": 1.1321,
+        "reason": "58% of customers who buy Monitor Arm also buy Standing Desk"
+      }
+    ]
+  },
+  "bundles": [
+    {
+      "items": [
+        "O004",
+        "O005"
+      ],
+      "item_names": [
+        "Wireless Keyboard",
+        "Wireless Mouse"
+      ],
+      "support": 0.185625,
+      "original_price": 158.0,
+      "bundle_price": 142.2,
+      "discount_pct": 10,
+      "savings": 15.8
+    },
+    {
+      "items": [
+        "O007",
+        "O008"
+      ],
+      "item_names": [
+        "Laser Printer",
+        "Document Scanner"
+      ],
+      "support": 0.1675,
+      "original_price": 498.0,
+      "bundle_price": 448.2,
+      "discount_pct": 10,
+      "savings": 49.8
+    },
+    {
+      "items": [
+        "O006",
+        "O016"
+      ],
+      "item_names": [
+        "HD Webcam",
+        "Noise-Cancel Headphones"
+      ],
+      "support": 0.146875,
+      "original_price": 378.0,
+      "bundle_price": 340.2,
+      "discount_pct": 10,
+      "savings": 37.8
+    },
+    {
+      "items": [
+        "O001",
+        "O002"
+      ],
+      "item_names": [
+        "Ergonomic Chair",
+        "Standing Desk"
+      ],
+      "support": 0.146875,
+      "original_price": 998.0,
+      "bundle_price": 898.2,
+      "discount_pct": 10,
+      "savings": 99.8
+    },
+    {
+      "items": [
+        "O007",
+        "O009"
+      ],
+      "item_names": [
+        "Laser Printer",
+        "Paper Shredder"
+      ],
+      "support": 0.14,
+      "original_price": 388.0,
+      "bundle_price": 349.2,
+      "discount_pct": 10,
+      "savings": 38.8
+    },
+    {
+      "items": [
+        "O004",
+        "O014"
+      ],
+      "item_names": [
+        "Wireless Keyboard",
+        "Laptop Stand"
+      ],
+      "support": 0.129375,
+      "original_price": 158.0,
+      "bundle_price": 142.2,
+      "discount_pct": 10,
+      "savings": 15.8
+    },
+    {
+      "items": [
+        "O005",
+        "O014"
+      ],
+      "item_names": [
+        "Wireless Mouse",
+        "Laptop Stand"
+      ],
+      "support": 0.128125,
+      "original_price": 118.0,
+      "bundle_price": 106.2,
+      "discount_pct": 10,
+      "savings": 11.8
+    },
+    {
+      "items": [
+        "O002",
+        "O018"
+      ],
+      "item_names": [
+        "Standing Desk",
+        "Monitor Arm"
+      ],
+      "support": 0.121875,
+      "original_price": 688.0,
+      "bundle_price": 619.2,
+      "discount_pct": 10,
+      "savings": 68.8
+    }
+  ],
+  "promos": [
+    {
+      "title": "Whiteboard Bundle",
+      "description": "Buy Whiteboard and save 20% on Planner / Calendar. (67% of buyers choose this combo)",
+      "type": "bundle_discount",
+      "discount": 20,
+      "lift": 3.893706,
+      "confidence": 0.669231,
+      "trigger_items": [
+        "O012"
+      ],
+      "target_items": [
+        "O013"
+      ]
+    },
+    {
+      "title": "Planner / Calendar Bundle",
+      "description": "Buy Planner / Calendar and save 20% on Whiteboard. (63% of buyers choose this combo)",
+      "type": "bundle_discount",
+      "discount": 20,
+      "lift": 3.893706,
+      "confidence": 0.632727,
+      "trigger_items": [
+        "O013"
+      ],
+      "target_items": [
+        "O012"
+      ]
+    },
+    {
+      "title": "Combo Deal: Wireless Mouse + Laptop Stand",
+      "description": "Add Wireless Mouse and Laptop Stand to your cart and get Wireless Keyboard at 25% off!",
+      "type": "buy2get1",
+      "discount": 25,
+      "lift": 2.862381,
+      "confidence": 0.785366,
+      "trigger_items": [
+        "O005",
+        "O014"
+      ],
+      "target_items": [
+        "O004"
+      ]
+    },
+    {
+      "title": "Combo Deal: Wireless Keyboard + Laptop Stand",
+      "description": "Add Wireless Keyboard and Laptop Stand to your cart and get Wireless Mouse at 25% off!",
+      "type": "buy2get1",
+      "discount": 25,
+      "lift": 2.860792,
+      "confidence": 0.777778,
+      "trigger_items": [
+        "O004",
+        "O014"
+      ],
+      "target_items": [
+        "O005"
+      ]
+    },
+    {
+      "title": "Noise-Cancel Headphones Bundle",
+      "description": "Buy Noise-Cancel Headphones and save 20% on HD Webcam. (69% of buyers choose this combo)",
+      "type": "bundle_discount",
+      "discount": 20,
+      "lift": 2.697274,
+      "confidence": 0.691176,
+      "trigger_items": [
+        "O016"
+      ],
+      "target_items": [
+        "O006"
+      ]
+    }
+  ],
+  "insights": [
+    {
+      "type": "anchor_product",
+      "icon": "ri-anchor-line",
+      "title": "Anchor Product: Wireless Mouse",
+      "description": "Wireless Mouse appears in 4 association rules \u2014 feature it prominently on the homepage and in paid ads to maximise cross-sell chain reactions.",
+      "items": [
+        "O005"
+      ]
+    },
+    {
+      "type": "shelf_placement",
+      "icon": "ri-layout-grid-line",
+      "title": "Top Co-Purchase Pair \u2014 Co-locate in Store",
+      "description": "Wireless Keyboard and Wireless Mouse are bought together 18.6% of the time. Place them adjacent on the shelf or in the same product listing cluster to reduce friction.",
+      "items": [
+        "O004",
+        "O005"
+      ]
+    },
+    {
+      "type": "category_synergy",
+      "icon": "ri-links-line",
+      "title": "Category Synergy: Audio \u2194 Video",
+      "description": "Products in 'Audio' and 'Video' appear together in 2 rules (avg lift 2.7\u00d7). Consider cross-category email campaigns and bundled landing pages.",
+      "items": []
+    },
+    {
+      "type": "promo_opportunity",
+      "icon": "ri-price-tag-3-line",
+      "title": "Highest-Lift Bundle Opportunity",
+      "description": "'Planner / Calendar \u2192 Whiteboard' has lift 3.89\u00d7 and confidence 63%. This pair is far more likely than chance \u2014 launch a limited-time bundle discount to capture maximum revenue.",
+      "items": [
+        "O013",
+        "O012"
+      ]
+    }
+  ]
+}

@@ -1,154 +1,381 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NexusCart | Smart E-Commerce</title>
-    <meta name="description" content="An intelligent e-commerce platform powered by Market Basket Analysis.">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./index.css">
+    <title>NexusCart | ML-Powered E-Commerce</title>
+    <meta name="description" content="Market Basket Analysis powered e-commerce demo — NexusCart">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="./index.css">
 </head>
-
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-brand">
-            <i class="ri-shopping-bag-3-fill nav-logo-icon"></i>
-            NexusCart
+
+<!-- ═══════════════════════════════ NAVBAR ═══════════════════════════════ -->
+<nav class="navbar">
+    <div class="nav-brand">
+        <i class="ri-shopping-bag-3-fill nav-logo-icon"></i>
+        NexusCart
+        <span class="nav-badge">MBA Engine v3</span>
+    </div>
+
+    <div class="nav-tabs">
+        <button class="nav-tab" id="tab-storefront">
+            <i class="ri-store-2-line"></i> Storefront
+        </button>
+        <button class="nav-tab active" id="tab-admin">
+            <i class="ri-dashboard-3-line"></i> Admin Dashboard
+        </button>
+    </div>
+
+    <div class="nav-actions">
+        <div class="engine-pill">
+            <div class="pulse-dot"></div>
+            <span id="engine-status-text">FP-Growth Active</span>
         </div>
-        <div class="nav-links">
-            <a href="#" id="storefront-toggle">Storefront</a>
-            <a href="#" id="admin-toggle" class="active">Admin Dashboard</a>
+        <div class="cart-icon" id="cart-btn">
+            <i class="ri-shopping-cart-2-line"></i>
+            <span class="cart-count" id="cart-count">0</span>
         </div>
-        <div class="nav-actions">
-            <div class="cart-icon" id="cart-btn">
-                <i class="ri-shopping-cart-2-line"></i>
-                <span class="cart-count">0</span>
-            </div>
+    </div>
+</nav>
+
+<!-- ═══════════════════════════ STOREFRONT VIEW ═══════════════════════════ -->
+<main id="storefront-view" class="view">
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-label"><i class="ri-sparkling-fill"></i> ML-Ranked for You</div>
+            <h1>Smart Recommendations, <span class="gradient-text">Real-Time</span></h1>
+            <p>Our FP-Growth engine analyses thousands of transactions and ranks every product by its association strength — what you see first is what customers actually buy together most.</p>
         </div>
-    </nav>
+        <div class="hero-stats" id="hero-stats">
+            <!-- injected by JS -->
+        </div>
+    </section>
 
-    <!-- Main Storefront View -->
-    <main id="storefront-view" class="view">
-        <!-- AI Homepage Ranking Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Smart Recommendations For You</h1>
-                <p>Based on our real-time ML engine analyzing thousands of transactions, here are the top picks curated
-                    just for your session.</p>
-            </div>
-        </section>
+    <!-- Trending Now (Homepage Ranked) -->
+    <section class="container">
+        <div class="section-header">
+            <h2>Trending Now</h2>
+            <span class="chip chip-green"><i class="ri-bar-chart-2-line"></i> MBA-Ranked</span>
+            <span class="chip chip-blue" id="dataset-chip">Dataset A</span>
+        </div>
+        <div class="product-grid" id="homepage-products">
+            <!-- injected by JS -->
+        </div>
+    </section>
 
-        <!-- Dynamic Product Grid -->
-        <section class="container">
-            <div class="section-header">
-                <h2>Trending Now</h2>
-                <span class="tag"><i class="ri-bar-chart-2-line"></i> Live Ranked</span>
-            </div>
-            <div class="product-grid" id="homepage-products">
-                <!-- Products injected by JS -->
-            </div>
-        </section>
+    <!-- Frequently Bought Together -->
+    <section class="container">
+        <div class="section-header">
+            <h2>Frequently Bought Together</h2>
+            <span class="chip chip-purple"><i class="ri-group-line"></i> Co-Purchase Patterns</span>
+        </div>
+        <div class="fbt-grid" id="fbt-section">
+            <!-- injected by JS -->
+        </div>
+    </section>
 
-        <!-- Promo Section (System Generated) -->
-        <section class="promo-section container" id="promo-banner">
-            <!-- Promo injected by JS -->
-        </section>
-    </main>
+    <!-- Promo Banner -->
+    <section class="container" id="promo-container">
+        <!-- injected by JS -->
+    </section>
 
-    <!-- Admin Dashboard View -->
-    <main id="admin-view" class="view active">
-        <section class="container">
-            <div class="admin-header">
+</main>
+
+<!-- ════════════════════════ ADMIN DASHBOARD VIEW ════════════════════════ -->
+<main id="admin-view" class="view active">
+    <section class="container admin-container">
+
+        <!-- Admin Header -->
+        <div class="admin-header">
+            <div>
                 <h2>MBA Engine Control Center</h2>
-                <div class="learning-status">
-                    <div class="status-indicator live"></div>
-                    <span>System Status: Learning (Iteration <span id="iteration-counter">3</span>)</span>
+                <p class="text-muted">Self-learning Market Basket Analysis — FP-Growth algorithm</p>
+            </div>
+            <div class="header-controls">
+                <div class="learning-pill">
+                    <div class="pulse-dot"></div>
+                    <span>Live — Iteration <strong id="iter-display">1</strong> of 3</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dataset Tabs -->
+        <div class="dataset-tabs">
+            <button class="ds-tab active" data-dataset="A">
+                <i class="ri-gamepad-line"></i>
+                <div>
+                    <div class="ds-tab-title">Dataset A</div>
+                    <div class="ds-tab-sub">GameTech Store</div>
+                </div>
+            </button>
+            <button class="ds-tab" data-dataset="B">
+                <i class="ri-briefcase-line"></i>
+                <div>
+                    <div class="ds-tab-title">Dataset B</div>
+                    <div class="ds-tab-sub">OfficePro Store</div>
+                </div>
+            </button>
+        </div>
+
+        <!-- Iteration Selector -->
+        <div class="iteration-bar">
+            <div class="iter-label">Learning Iteration:</div>
+            <div class="iter-buttons">
+                <button class="iter-btn active" data-iter="1">
+                    <span class="iter-num">1</span>
+                    <span class="iter-sub">Baseline</span>
+                </button>
+                <div class="iter-arrow"><i class="ri-arrow-right-line"></i></div>
+                <button class="iter-btn" data-iter="2">
+                    <span class="iter-num">2</span>
+                    <span class="iter-sub">New Data</span>
+                </button>
+                <div class="iter-arrow"><i class="ri-arrow-right-line"></i></div>
+                <button class="iter-btn" data-iter="3">
+                    <span class="iter-num">3</span>
+                    <span class="iter-sub">Adapted</span>
+                </button>
+            </div>
+            <button class="btn btn-primary btn-sm" id="auto-iterate-btn">
+                <i class="ri-play-circle-line"></i> Auto-Iterate
+            </button>
+        </div>
+
+        <!-- Engine Diagnostics + Iteration Delta -->
+        <div class="dash-row">
+            <!-- Diagnostics -->
+            <div class="dash-card">
+                <div class="card-title"><i class="ri-cpu-line"></i> Engine Diagnostics</div>
+                <div class="metric-row">
+                    <span>Algorithm</span>
+                    <strong>FP-Growth (Dense Basket)</strong>
+                </div>
+                <div class="metric-row">
+                    <span>Min Support</span>
+                    <strong id="diag-sup">—</strong>
+                </div>
+                <div class="metric-row">
+                    <span>Min Confidence</span>
+                    <strong id="diag-conf">—</strong>
+                </div>
+                <div class="metric-row">
+                    <span>Auto-Tuning Steps</span>
+                    <strong id="diag-steps">—</strong>
+                </div>
+                <div class="metric-row">
+                    <span>Tuning Result</span>
+                    <span class="text-muted small" id="diag-reason">—</span>
                 </div>
             </div>
 
-            <div class="dashboard-grid">
-                <!-- Metrics Card -->
-                <div class="dash-card" style="grid-column: 1 / -1; max-width: 800px; margin: 0 auto; width: 100%;">
-                    <h3 style="text-align: center;">Engine Diagnostics</h3>
-                    <div class="metric-row">
-                        <span>Min Support</span>
-                        <strong>0.02 (Auto-tuned)</strong>
-                    </div>
-                    <div class="metric-row">
-                        <span>Min Confidence</span>
-                        <strong>0.45 (Stable)</strong>
-                    </div>
-                    <div class="metric-row">
-                        <span>Algorithm</span>
-                        <strong>FP-Growth (Dense Basket Optimized)</strong>
-                    </div>
-                    <div class="metric-row">
-                        <span>Datasets Processed</span>
-                        <strong>Dataset A & Dataset B (Synthetics)</strong>
-                    </div>
-                    <button class="btn btn-primary mt-3" id="trigger-update-btn">
-                        <i class="ri-refresh-line"></i> Simulate Data Ingestion (Iterate)
-                    </button>
+            <!-- Stats -->
+            <div class="dash-card">
+                <div class="card-title"><i class="ri-database-2-line"></i> Dataset Statistics</div>
+                <div class="metric-row">
+                    <span>Transactions</span>
+                    <strong id="stat-txn">—</strong>
                 </div>
+                <div class="metric-row">
+                    <span>Unique Items</span>
+                    <strong id="stat-items">—</strong>
+                </div>
+                <div class="metric-row">
+                    <span>Avg Basket Size</span>
+                    <strong id="stat-basket">—</strong>
+                </div>
+                <div class="metric-row">
+                    <span>Frequent Itemsets</span>
+                    <strong id="stat-itemsets">—</strong>
+                </div>
+                <div class="metric-row">
+                    <span>Association Rules</span>
+                    <strong id="stat-rules">—</strong>
+                </div>
+            </div>
 
-                <!-- Top Rules Card -->
-                <div class="dash-card full-width">
-                    <h3>Top Association Rules (Live Evaluation)</h3>
-                    <div class="table-responsive">
+            <!-- Stability Report -->
+            <div class="dash-card">
+                <div class="card-title"><i class="ri-shield-check-line"></i> Rule Stability Report</div>
+                <div class="stability-summary" id="stability-summary">
+                    <!-- injected by JS -->
+                </div>
+                <div class="drift-summary" id="drift-summary">
+                    <!-- injected by JS -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Auto-Threshold History -->
+        <div class="dash-card">
+            <div class="card-title"><i class="ri-settings-4-line"></i> Auto-Threshold Tuning History (this iteration)</div>
+            <div class="threshold-timeline" id="threshold-timeline">
+                <!-- injected by JS -->
+            </div>
+        </div>
+
+        <!-- Association Rules Table -->
+        <div class="dash-card">
+            <div class="card-title">
+                <i class="ri-table-2"></i> Top Association Rules
+                <span class="chip chip-blue" style="margin-left:auto;">All 6 Metrics</span>
+            </div>
+            <div class="table-wrapper">
+                <table class="data-table" id="rules-table">
+                    <thead>
+                        <tr>
+                            <th>If Customer Buys</th>
+                            <th>They Also Buy</th>
+                            <th title="Fraction of all transactions containing both">Support</th>
+                            <th title="P(consequent | antecedent)">Confidence</th>
+                            <th title="How much more likely than random co-occurrence">Lift</th>
+                            <th title="Actual minus expected co-occurrence">Leverage</th>
+                            <th title="Strength of implication">Conviction</th>
+                            <th title="Composite quality score (0–1)">Score</th>
+                            <th>Stability</th>
+                            <th>Drift</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rules-tbody">
+                        <!-- injected by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Top Frequent Itemsets (Bundles) -->
+        <div class="dash-card">
+            <div class="card-title"><i class="ri-gift-line"></i> Top Frequent Itemsets (Bundle Candidates)</div>
+            <div class="bundle-grid" id="itemsets-grid">
+                <!-- injected by JS -->
+            </div>
+        </div>
+
+        <!-- Bundle Deals -->
+        <div class="dash-card">
+            <div class="card-title"><i class="ri-price-tag-3-line"></i> Generated Bundle Deals</div>
+            <div class="bundle-deals-grid" id="bundle-deals-grid">
+                <!-- injected by JS -->
+            </div>
+        </div>
+
+        <!-- Promos -->
+        <div class="dash-card">
+            <div class="card-title"><i class="ri-megaphone-line"></i> Dynamic Promo Generator</div>
+            <div class="promos-list" id="promos-list">
+                <!-- injected by JS -->
+            </div>
+        </div>
+
+        <!-- Business Insights -->
+        <div class="dash-card">
+            <div class="card-title"><i class="ri-lightbulb-line"></i> Business Insights</div>
+            <div class="insights-grid" id="insights-grid">
+                <!-- injected by JS -->
+            </div>
+        </div>
+
+        <!-- CSV Upload / Live Ingestion -->
+        <div class="dash-card">
+            <div class="card-title"><i class="ri-upload-cloud-2-line"></i> Live Data Ingestion — Upload Custom CSV</div>
+            <div class="upload-zone" id="upload-zone">
+                <i class="ri-file-text-line upload-icon"></i>
+                <div class="upload-text">
+                    <strong>Drop a transaction CSV here</strong> or
+                    <label class="upload-label" for="csv-file-input">browse files</label>
+                    <input type="file" id="csv-file-input" accept=".csv" style="display:none;">
+                </div>
+                <div class="upload-hint text-muted small">
+                    Format: <code>transaction_id,items</code> where items are <code>|</code>-separated product IDs<br>
+                    Or use any CSV where each row has space/comma-separated item names — the engine adapts.
+                </div>
+            </div>
+            <div id="upload-status" style="display:none;"></div>
+            <div id="upload-results" style="display:none;">
+                <div class="upload-result-header">
+                    <span class="chip chip-green"><i class="ri-check-line"></i> Analysis Complete</span>
+                    <span id="upload-file-name" class="text-muted small"></span>
+                </div>
+                <div class="dash-row" style="margin-top:1rem;">
+                    <div class="dash-card" style="margin-bottom:0;">
+                        <div class="card-title"><i class="ri-database-2-line"></i> Ingested Stats</div>
+                        <div id="upload-stats-block"></div>
+                    </div>
+                    <div class="dash-card" style="margin-bottom:0;">
+                        <div class="card-title"><i class="ri-settings-4-line"></i> Auto-Tuned Config</div>
+                        <div id="upload-config-block"></div>
+                    </div>
+                </div>
+                <div class="dash-card" style="margin-top:1rem;margin-bottom:0;">
+                    <div class="card-title"><i class="ri-table-2"></i> Mined Association Rules</div>
+                    <div class="table-wrapper">
                         <table class="data-table">
-                            <thead>
-                                <tr>
-                                    <th>Antecedent (If buy)</th>
-                                    <th>Consequent (Then buy)</th>
-                                    <th>Support</th>
-                                    <th>Confidence</th>
-                                    <th>Lift</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody id="rules-table-body">
-                                <!-- Rules injected by JS -->
-                            </tbody>
+                            <thead><tr>
+                                <th>Antecedent</th><th>Consequent</th>
+                                <th>Support</th><th>Confidence</th>
+                                <th>Lift</th><th>Leverage</th><th>Conviction</th>
+                            </tr></thead>
+                            <tbody id="upload-rules-tbody"></tbody>
                         </table>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Shopping Cart Sidebar -->
-    <div class="cart-sidebar" id="cart-sidebar">
-        <div class="cart-header">
-            <h3>Your Cart</h3>
-            <button class="close-btn" id="close-cart"><i class="ri-close-line"></i></button>
-        </div>
-        <div class="cart-items" id="cart-items">
-            <!-- Items injected by JS -->
-            <div class="empty-cart-msg">Your cart is empty.</div>
-        </div>
-
-        <!-- Cross-sell / Frequently Bought Together -->
-        <div class="cart-recommendations" id="cart-recommendations" style="display: none;">
-            <h4><i class="ri-sparkling-fill"></i> Frequently Bought Together</h4>
-            <div class="recommendation-list" id="recommendation-list">
-                <!-- Recommendations injected by JS -->
+                <div class="dash-card" style="margin-top:1rem;margin-bottom:0;">
+                    <div class="card-title"><i class="ri-gift-line"></i> Top Frequent Itemsets</div>
+                    <div id="upload-itemsets-block" class="bundle-grid"></div>
+                </div>
             </div>
         </div>
 
-        <div class="cart-footer">
-            <div class="cart-total">
-                <span>Total:</span>
-                <strong id="cart-total-price">$0.00</strong>
+        <!-- Dataset A vs B Comparison -->
+        <div class="dash-card" id="comparison-card">
+            <div class="card-title"><i class="ri-git-branch-line"></i> Dataset A vs B — Pattern Comparison (Iteration 3)</div>
+            <div class="comparison-grid" id="comparison-grid">
+                <!-- injected by JS -->
             </div>
-            <button class="btn btn-primary checkout-btn" disabled>Proceed to Checkout</button>
         </div>
+
+    </section>
+</main>
+
+<!-- ═════════════════════════════ CART SIDEBAR ═══════════════════════════ -->
+<div class="cart-sidebar" id="cart-sidebar">
+    <div class="cart-header">
+        <h3><i class="ri-shopping-cart-2-line"></i> Your Cart</h3>
+        <button class="icon-btn" id="close-cart"><i class="ri-close-line"></i></button>
     </div>
-    <div class="cart-overlay" id="cart-overlay"></div>
 
-    <script src="./app.js"></script>
+    <div class="cart-items" id="cart-items">
+        <div class="empty-cart"><i class="ri-shopping-basket-line"></i><p>Cart is empty</p></div>
+    </div>
+
+    <!-- MBA Cross-sell Widget -->
+    <div class="cart-crosssell" id="cart-crosssell" style="display:none;">
+        <div class="crosssell-header">
+            <i class="ri-sparkling-fill"></i>
+            <span>Frequently Bought Together</span>
+        </div>
+        <div id="crosssell-list"></div>
+    </div>
+
+    <div class="cart-footer">
+        <div class="cart-total-row">
+            <span>Total</span>
+            <strong id="cart-total">$0.00</strong>
+        </div>
+        <button class="btn btn-primary w-full" id="checkout-btn" disabled>
+            <i class="ri-secure-payment-line"></i> Checkout
+        </button>
+    </div>
+</div>
+<div class="cart-overlay" id="cart-overlay"></div>
+
+<!-- Real data generated by main.py — must come BEFORE app.js -->
+<!-- If frontend_data.js is missing, app.js falls back to built-in demo data -->
+<script src="./frontend_data.js" onerror="console.warn('frontend_data.js not found — using fallback demo data')"></script>
+<script src="./app.js"></script>
 </body>
-
 </html>
